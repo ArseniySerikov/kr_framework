@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Check Result</h1>
+        {% if is_lucky %}
+            <p>Congratulations! Your ticket is lucky!</p>
+            <img src="{{ url_for('static', filename='yes.png') }}" alt="Lucky Ticket">
+        {% else %}
+            <p>Unfortunately, your ticket is not lucky.</p>
+            <img src="{{ url_for('static', filename='no.png') }}" alt="Unlucky Ticket">
+        {% endif %}
+        <a href="{{ url_for('index') }}">Check another ticket</a>
+    </div>
+</body>
+</html>
